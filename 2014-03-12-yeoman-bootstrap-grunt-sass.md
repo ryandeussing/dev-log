@@ -1,6 +1,6 @@
-###the goal here is to use yeoman + bootstrap for local dev (of SiteLeaf theme)
+###the goal here is to use yeoman + bootstrap to create a SiteLeaf theme
 
-- re-installed yeoman (perhaps `nom update` would have worked)
+- re-installed yeoman (perhaps `npm update` would have worked)
 - used the updated `yo webapp` generator, chose `bootstrap` but not `sass/compass`
 - installed `grunt-sass` and added `grunt.loadNpmTasks('grunt-sass');` to my gruntfile
 
