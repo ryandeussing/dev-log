@@ -13,7 +13,8 @@ Next: I'll see how I can set things up for a SiteLeaf theme within this Yeoman a
 Actually, that's not going to work. I'll need to take steps:
 1. design statically using 'grunt-serve' which is crazy-fast
 2. then decide which elements map to SiteLeaf assets
-3. then recreate the site as a SiteLeaf theme using the `site-leaf-gem` and `pow`
+3. then recreate the site as a SiteLeaf theme, using assets
+4. from then on, use `site-leaf-gem` and `pow` to work on site
 
 
 
