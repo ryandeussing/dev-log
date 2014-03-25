@@ -1,8 +1,12 @@
-2014-03-24
+### 2014-03-25
+- 
+- reinstalled yo-webapp from scratch, using ruby compass gem for now...
+
+### 2014-03-24
 - turns out .scss files are not compiling, and that I prob want to use grunt-contrib-sass (libsass is not ready for primetime)
 - there's a PR for using SASS without compass, gotta wait for it to be accepted...
 
-## the goal here is to use yeoman + bootstrap to create a SiteLeaf theme
+### the goal here is to use yeoman + bootstrap to create a SiteLeaf theme
 
 - re-installed yeoman (perhaps `npm update` would have worked)
 - used the updated `yo webapp` generator, chose `bootstrap` but not `sass/compass`
@@ -10,7 +14,7 @@
 
 So now I'm not using Compass and can't lean on its functions, but I never really did.
 
-## note: https://github.com/yeoman/generator-webapp/issues/302
+### note: https://github.com/yeoman/generator-webapp/issues/302
 
 Next: I'll see how I can set things up for a SiteLeaf theme within this Yeoman app.
 
