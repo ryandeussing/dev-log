@@ -1,3 +1,7 @@
+2014-03-24
+- turns out .scss files are not compiling, and that I prob want to use grunt-contrib-sass (libsass is not ready for primetime)
+- there's a PR for using SASS without compass, gotta wait for it to be accepted...
+
 ## the goal here is to use yeoman + bootstrap to create a SiteLeaf theme
 
 - re-installed yeoman (perhaps `npm update` would have worked)
@@ -15,6 +19,5 @@ Actually, that's not going to work. I'll need to take steps:
 2. then decide which elements map to SiteLeaf assets
 3. then recreate the site as a SiteLeaf theme, using assets
 4. from then on, use `site-leaf-gem` and `pow` to work on site
-
 
 
