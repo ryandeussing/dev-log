@@ -2,7 +2,7 @@
 
 Create two SSH keys, saving each to a separate file:
 
-    $ cd ~/.ssh
+    $ cd ~/.ssh 
     $ ssh-keygen -t rsa -C "ryandeussing@gmail.com"
     # save it as id_rsa_personal when prompted
     $ ssh-keygen -t rsa -C "ryan@makery.co"
