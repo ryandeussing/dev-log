@@ -33,7 +33,7 @@ Clear stores identities:
 Add new keys:
 
     $ ssh-add id_rsa_personal
-    $ ssh-add id_rsa_makery
+    $ ssh-add id_rsa_makeryco
     
 Test to make sure they are stored:
 
@@ -43,7 +43,7 @@ Test Github:
 
     $ ssh -T personal
     Hi githubPersonal! You've successfully authenticated, but GitHub does not provide shell access.
-    $ ssh -T work
+    $ ssh -T makeryco
     Hi githubWork! You've successfully authenticated, but GitHub does not provide shell access.
 
 ### Override global email setting for makeryco repos!
