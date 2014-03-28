@@ -8,3 +8,9 @@ This is a permissions issue and the fix, courtesy of Tim Schaub, is to recursive
 sudo chown -R $USER /usr/local
 ```
 2 -  Downloaded & reinstalled node.js
+
+3 - Uninstalled hombrew node.js, repeat 2 above
+
+4 - Bower was mysteriously not installed by Yeoman, so I manually installed it `npm install bower -g`
+
+5 - re-ran `yo webapp` and all good
