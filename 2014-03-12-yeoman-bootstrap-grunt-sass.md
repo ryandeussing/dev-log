@@ -1,5 +1,7 @@
+### 2014-03-31
+- was getting weird npm errors, including on `npm update`, so I removed npm files and reintalled node using the installer. fixed.
+
 ### 2014-03-25
-- 
 - reinstalled yo-webapp from scratch, using ruby compass gem for now...
 
 ### 2014-03-24
