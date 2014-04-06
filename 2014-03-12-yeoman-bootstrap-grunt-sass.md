@@ -1,3 +1,12 @@
+### 2014-04-06
+- removed `generator-webapp` manually, b/c I had copied in code from github last time to get the latest before it was released
+    
+    git clone https://github.com/yeoman/generator-webapp
+    cd generator-webapp
+    npm link
+
+Now `yo webapp` will use the latest version, i.e. from the generator-webapp directory. Then each time you want to update the generator, just navigate to generator-webapp, git pull origin master.
+
 ### 2014-03-31
 - was getting weird npm errors, including on `npm update`, so I removed npm files and reintalled node using the installer. fixed.
 
