@@ -15,4 +15,4 @@ deploy only the `dist` folder using `git subtree` http://yeoman.io/deployment.ht
 ```
 git subtree push --prefix dist origin gh-pages
 ``` 
-- commit regular dev changes to `master`, and re-use the above command when you want to push `dist` to `gh-pages`
+- commit regular dev changes to `master`, and re-use the above command when you want to push `dist` to `gh-pages` **no need to switch branches**
