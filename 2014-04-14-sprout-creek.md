@@ -69,3 +69,5 @@ Actually I bet I should register the `indent` task separately, so it's not run o
   }
 }
 ```
+
+## add `_vars.scss` partial to override Bootstrap vars as needed
