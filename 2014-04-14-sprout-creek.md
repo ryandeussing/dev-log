@@ -26,3 +26,5 @@ indent: {
 - run `grunt indent`
 - maunally tweak/move files
 
+Actually I bet I should register the `indent` task separately, so it's not run on every `grunt build`!
+
