@@ -28,3 +28,44 @@ indent: {
 
 Actually I bet I should register the `indent` task separately, so it's not run on every `grunt build`!
 
+## mixins for breakpoint content-blocks
+
+```
+// ----- MIXINS WITH CONTENT BLOCKS  -----
+
+@mixin phone {
+  @media (max-width : $screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width : $screen-sm) and (max-width : $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin tablet-and-up {
+  @media (min-width : $screen-sm) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width : $screen-md) and (max-width : $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin desktop-and-up {
+  @media (min-width : $screen-md) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media (min-width : $screen-lg) {
+    @content;
+  }
+}
+```
