@@ -9,3 +9,7 @@ Something's screwy with with the way Bootstrap's fonts are handled during `grunt
   ```
 
 2. In `.gitgnore`, change `bower_components` to `/bower_components`
+
+2014-05-05 update:
+
+When using `yo-webapp` you need to manually copy bootstrap/s font files to `styles/fonts` - they can be found at ``
