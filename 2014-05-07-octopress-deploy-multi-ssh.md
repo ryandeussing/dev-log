@@ -1,4 +1,4 @@
-The git `config` in `_deploy` had the wrong remote. Probably will need to reset it when this happens again.
+The git `config` in the  `_deploy` directory had the wrong remote assigned. I had fixed this previously, so it's likely not the last time I'll see this...
 
 ```
 [remote "origin"]
