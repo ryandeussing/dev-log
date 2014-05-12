@@ -6,7 +6,7 @@ settings for ryandeussing.com:
 - a CNAME for www that points to ryandeussing.github.io
 - CNAME file in master branch with `ryandeussing.com`
 
-Better setup would be non-naked domain, but need different DNS for that (fastmail doesn't let you use @ alias)
+Better setup would be non-naked domain, but need different DNS for that (fastmail doesn't let you use @ alias) Update: namecheap works
 
 That would be:
 
