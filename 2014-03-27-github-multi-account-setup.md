@@ -51,3 +51,11 @@ Test Github:
 Otherwise commits will be blamed to your git global user (ryandeussing@gmail.com)
 
     git config user.email ryan@exceptionlab.co
+    
+    
+### Add correct remote to git config
+
+```
+[remote "origin"]
+	url = git@nptechweekly:nptechweekly/nptechweekly.git
+```
