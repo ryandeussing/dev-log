@@ -1,4 +1,4 @@
-### ryandeussing + makeryco accounts
+### ryandeussing + other accounts
 
 Create two SSH keys, saving each to a separate file:
 
