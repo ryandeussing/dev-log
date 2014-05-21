@@ -55,4 +55,6 @@ Otherwise commits will be blamed to your git global user (ryandeussing@gmail.com
     
 ### Add correct remote to git config
 
-`git remote add origin git@nptechweekly:nptechweekly/nptechweekly.git`
+```
+git remote add origin git@nptechweekly:nptechweekly/nptechweekly.git
+```
