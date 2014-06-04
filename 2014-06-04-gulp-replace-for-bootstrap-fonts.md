@@ -8,7 +8,7 @@ In `gulfile.js`:
 
 2. add a replace step to the `html` task:
 
-```
+```javascript
     return gulp.src('app/*.html')
         // yada yada yada
         // yada yada yada
