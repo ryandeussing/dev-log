@@ -10,11 +10,11 @@ In `gulfile.js`:
 
 ```
     return gulp.src('app/*.html')
-        ...
-        .pipe($.useref())
+        // yada yada yada
+        // yada yada yada
         .pipe(replace('bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/', 'fonts/'))
         .pipe(gulp.dest('dist'))
-        ...
+        // yada yada yada
 });
 ```
 
