@@ -1,11 +1,11 @@
 ### ryandeussing + other accounts
 
-Create two SSH keys, saving each to a separate file:
+Create multiple SSH keys, saving each to a separate file:
 
     $ cd ~/.ssh 
     $ ssh-keygen -t rsa -C "ryandeussing@gmail.com"
     # save it as id_rsa_ryandeussing when prompted
-    $ ssh-keygen -t rsa -C "ryan@makery.co"
+    $ ssh-keygen -t rsa -C "ryan@exceptionlab.co"
     # save it as id_rsa_exceptionlab when prompted
 
 Copy keys to clipboard one at a time and paste into Github accounts:
