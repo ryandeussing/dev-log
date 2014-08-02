@@ -1,8 +1,8 @@
 ## deploying `dist` to `gh-pages` within a `gulp-webapp` project
 
-1. npm install --save-dev gulp-subtree
+1) `npm install --save-dev gulp-subtree`
 
-2. create a `deploy` task
+2) create a `deploy` task
 
 ```
 gulp.task('deploy', ['build'], function () {
@@ -12,9 +12,9 @@ gulp.task('deploy', ['build'], function () {
 });
 ```
 
-3. remove `dist` from `.gitignore`
+3) remove `dist` from `.gitignore`
 
-4. add `CNAME` to the `extras` task (if using custom domain)
+4) add `CNAME` to the `extras` task (if using custom domain)
 
 ```
 gulp.task('extras', function () {
@@ -23,4 +23,6 @@ gulp.task('extras', function () {
 });
 ```
 
-5. run `gulp deploy` (builds + deploys!)
+5) run `gulp deploy` (builds + deploys!)
+
+6) set `gh-pages` branch as default on github
