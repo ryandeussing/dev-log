@@ -14,7 +14,7 @@ gulp.task('deploy', ['build'], function () {
 
 3) remove `dist` from `.gitignore`
 
-4) add `CNAME` to the `extras` task (if using custom domain)
+4) add `CNAME` to `app`, than edit the `extras` task (if using custom domain)
 
 ```
 gulp.task('extras', function () {
