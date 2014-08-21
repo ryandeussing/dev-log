@@ -1,9 +1,13 @@
+this is old - use `gulp deploy` now
+
+--
+
 In `nptechweekly`
 
 1. copy `template-email.html`
-2. remove inline css, uncommebt `.scss` file
+2. remove inline css, uncomment `.scss` file
 3. edit like a boss - don't forget social media links
-4. do NOT `grunt build`!
+4. do NOT `grunt build` etc.!
 5. when done, comment out `.scss` and paste inline css (from `tmp`)
 6. create `date-email.html` and `date-web.html` based on previous issue
 7. paste `CONTENT` block into each
