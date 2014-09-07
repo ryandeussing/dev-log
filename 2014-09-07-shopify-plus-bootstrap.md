@@ -10,3 +10,7 @@ So, here's the way to get Bootstrap working while designing a Shopify store:
 2. dump Bootstrap's scss files into your project, but without any directories, and then fix all the `import url()` paths so they work. I also removed a file called `_theme.scss` which I think has to do with creatig custom versions of Bootstrap and was causign an issue.
 
 3. you still have to wait for yoru .scss files to upload to Shopify and view your shit online
+
+Don't forget:
+ - override Bootstrap's defaults with your own styles as needed
+ - maybe borrow minification/uglification from yeoman's gulpfile so your deployed code is tight
