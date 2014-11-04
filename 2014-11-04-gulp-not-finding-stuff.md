@@ -1,5 +1,7 @@
 Gulp was complaining about not finding `modernizr.js`, the solution was to add a `/` to the paths being searched in the `html` task:
 
+(see https://github.com/yeoman/generator-gulp-webapp/issues/182)
+
 ```
 gulp.task('html', ['styles'], function () {
   var lazypipe = require('lazypipe');
