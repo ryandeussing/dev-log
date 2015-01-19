@@ -1,6 +1,6 @@
 ```
-// server/start.js
-// Meteor.call('removeAllPosts') will empty Posts collection
+// in server/start.js
+
 if (Meteor.isServer) {
   Meteor.startup(function() {
     return Meteor.methods({
