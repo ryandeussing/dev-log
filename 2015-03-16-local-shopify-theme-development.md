@@ -2,6 +2,8 @@
 
 • `gem install shopify_theme`
 
+requires ruby 1.9
+
 `theme watch` will upload changed/added assets to the live site, like it's 1996
 
 tip: use the theme id of an inacitve theme, and watch changes in the `preview theme` windoe
