@@ -4,10 +4,15 @@
 
 `theme watch` will upload changed/added assets to the live site, like it's 1996
 
+tip: use the theme id of an inacitve theme, and watch changes in the `preview theme` windoe
+
 • `npm install gulp-cssimport`
- - use this if you want to `@import` files from different directories locally
-  - instructions here: http://shopify.github.io/shopify-css-import/
-  - use the gulpfile below for scss:
+
+use this if you want to `@import` files from different directories locally
+
+instructions here: http://shopify.github.io/shopify-css-import/
+
+use the gulpfile below for scss:
 
 ```
 // https://github.com/unlight/gulp-cssimport
