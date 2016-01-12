@@ -239,10 +239,179 @@ Here, `vm.pick` will not be `a`, but will be the value of `vm.a`:
 <!-- note: use vm.$watch() to react to data changes when using debounce -->
 ```
 
+## transitions
 
+lets you apply automatic transitions when elements are inserted or removed from the DOM. CSS classes are automatically added/removed to trigger CSS transitions/animations, you can also apply javascript hooks for DOM manipulation. 
 
+`<div v-if="show" transition="my-transition"></div>`
 
+You can use the `transition` attribute with
+```
+• v-if
+• v-show
+• v-for (triggered for insertion/romoval only)
+• dynamic components
+• On a componenent rood node, using Vue instance DOM methods (vm.$appendTo(el))
+```
 
+When an element with `transition` is added or removed, Vue will:
+
+• Try to find a JavaScript transition hooks object registered either through `Vue.transition(id, hooks)` or passed in with the transitions option, using the id "#my-transition". If it finds it, it will call the appropriate hooks at different stages of the transition.
+
+• Automatically sniff whether the target element has CSS transitions or CSS animations applied, and add/remove the CSS classes at the appropriate times.
+
+• If no JavaScript hooks are provided and no CSS transitions/animations are detected, the DOM operation (insertion/removal) is executed immediately on next frame.
+
+`<div v-if="show" transition="expand">hello</div>`
+
+You need to define CSS rules for `.*-transition`, `.*-enter`, and `.*-leave` (see docs)
+
+Available javascript hooks:
+
+```javascript
+Vue.transition('expand', {
+
+  beforeEnter: function (el) {
+    el.textContent = 'beforeEnter'
+  },
+  enter: function (el) {
+    el.textContent = 'enter'
+  },
+  afterEnter: function (el) {
+    el.textContent = 'afterEnter'
+  },
+  enterCancelled: function (el) {
+    // handle cancellation
+  },
+
+  beforeLeave: function (el) {
+    el.textContent = 'beforeLeave'
+  },
+  leave: function (el) {
+    el.textContent = 'leave'
+  },
+  afterLeave: function (el) {
+    el.textContent = 'afterLeave'
+  },
+  leaveCancelled: function (el) {
+    // handle cancellation
+  }
+})
+```
+
+## custom transition classes let you use libraries like animate.css
+see docs
+
+## components
+
+when using `Vue.extend()` (either explicitly, or under-the-hood when using vue-loader) you need your component `data` to be a function that returns values. Otherwise every instance of the component would have the same value.
+
+## props
+
+every component instance has its own isolated scope. You cannot directly reference parent data in a child component's template. You pass data down using `props`.
+
+A child component needs to explicity declare the props it expects:
+
+```javascript
+Vue.component('child', {
+  // declare the props
+  props: ['msg'],
+  // the prop can be used inside templates, and will also
+  // be set as `this.msg`
+  template: '<span>{{ msg }}</span>'
+})
+```
+
+Then we can pass a string to it: `<child msg="hello!"></child>`
+
+### html requires kebab-case
+
+`camelCase` prop names are standard, but inside html you need to use the `kebab-case` equivalent:
+
+```javascript
+Vue.component('child', {
+  // camelCase in JavaScript
+  props: ['myMessage'],
+  template: '<span>{{ myMessage }}</span>'
+})
+```
+
+`<child my-message="hello!"></child>`
+
+## dynamic props
+
+you can use `v-bind` (or shorthand) to dynamically bind props to data on the parent. When data is updated, it will flow down to the child:
+
+```
+<div>
+  <input v-model="parentMsg">
+  <br>
+  <child :my-message="parentMsg"></child>
+</div>
+```
+
+## literal vs. dynamic
+
+```
+<!-- this passes down a plain string "foo" -->
+<comp some-prop="foo"></comp>
+```
+
+```
+<!-- this passes down a reference to data.foo -->
+<comp :some-prop="foo"></comp>
+```
+
+## one-way data-binding is the default
+
+but you can enforce a two-way (or a one-time) binding with the `.sync` and `.once` modifiers
+
+```
+<!-- default, one-way-down binding -->
+<child :msg="parentMsg"></child>
+
+<!-- explicit two-way binding -->
+<child :msg.sync="parentMsg"></child>
+
+<!-- explicit one-time binding -->
+<child :msg.once="parentMsg"></child>
+```
+### note: if the prop being passed down is an Object or an Array, it is passed by reference. Mutating the Object or Array itself inside the child will affect parent state, regardless of the binding type you are using.
+
+## prop validation
+
+see docs for full details.
+
+when re-using components, this is a good idea. You can also provide default values:
+
+```javascript
+Vue.component('example', {
+  props: {
+    // basic type check (`null` means accept any type)
+    propA: Number,
+    // a required string
+    propB: {
+      type: String,
+      required: true
+    },
+    // a number with default value
+    propC: {
+      type: Number,
+      default: 100
+    }
+  }
+)};
+```
+
+```
+Available types:
+- String
+- Number
+- Boolean
+- Function
+- Object
+- Array
+```
 
 
 
