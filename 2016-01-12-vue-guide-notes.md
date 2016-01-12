@@ -506,7 +506,7 @@ Here's the result:
 
 you can have ONE unnamed slot (the default) and MANY named slots.
 
-use named slots to put included content in specific places:
+use named slots to put included content in specific places, weaving componenets together.
 
 here's a `multi-insertion` component:
 ```
@@ -533,13 +533,83 @@ Result:
 </div>
 ```
 
+### dynamic components
 
+you can use the reserved `component` element and the `is` attribute to switch between components mounted at the same place:
 
+```javascript
+new Vue({
+  el: 'body',
+  data: {
+    currentView: 'home'
+  },
+  components: {
+    home: { /* ... */ },
+    posts: { /* ... */ },
+    archive: { /* ... */ }
+  }
+})
+```
+the component changes when `vm.currentview` changes, and `keep-alive` (optional) will cache instances so can avoid re-rendering or preserve state:
 
+```
+<component :is="currentView" keep-alive>
+</component>
+```
 
+### activate hook
 
+When switching components, the incoming component might need to perform some asynchronous operation before it should be swapped in. To do this, implement the `activate` hook on the incoming component:
 
+```javascript
+Vue.component('activate-example', {
+  activate: function (done) {
+    var self = this
+    loadDataAsync(function (data) {
+      self.someData = data
+      done()
+    })
+  }
+})
+```
 
+`activate` hooks is only respected during dynamic component swapping or the inital render for static components. 
+
+### transition-mode
+
+allows you to specify how the transition between two dynamic components should be executed
+
+by default, incoming and outgoing component transitions happen sumultaneously, but there are two-other modes:
+
+- `in-out`: New component transitions in first, current component transitions out after incoming transition has finished
+
+- `out-in`: Current component transitions out first, new component transitions in after outgoing transition has finished
+
+## using v-for and custom components
+
+You can do this:
+`<my-component v-for="item in items"></my-component>`
+But that won't pass any data to each instance, b/c components have isolated scope.
+So you need to pass data in `props`:
+```
+<my-component
+  v-for="item in items"
+  :item="item"
+  :index="$index">
+</my-component>
+```
+
+## making reusable components
+
+are you going to reuse this component somewhere else later? If so, make the interface really clean.
+
+The API for a Vue.js component essentially comes in three parts - `props`, `events` and `slots`:
+
+• `Props` allow the external environment to feed data to the component
+
+• `Events` allow the component to trigger actions in the external environment
+
+• `Slots` allow the external environment to insert content into the component’s view structure
 
 
 
