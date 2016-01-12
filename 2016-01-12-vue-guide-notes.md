@@ -1,3 +1,5 @@
 ## A New Post
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+```
+<div class="static" v-bind:class="{ 'class-a': isA, 'class-b': isB }"></div>
+```
