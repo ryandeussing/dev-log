@@ -63,4 +63,63 @@ you can also bind to multiple style objects with an array:
 
 You get autoprefixing for free.
 
+## v-if, v-show, v-else
+
+pretty self-explanatory
+
+## v-for
+
+rendering lists...
+
+```
+<ul id="example-1">
+  <li v-for="item in items">
+    {{ item.message }}
+  </li>
+</ul>
+```
+
+```javascript
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})
+```
+Result:
+```
+• Foo
+• Bar
+```
+
+inside `v-for` we have access to properties in the parent scopr, plus `$index`:
+
+```
+<ul id="example-2">
+  <li v-for="item in items">
+    {{ parentMessage }} - {{ $index }} - {{ item.message }}
+  </li>
+</ul>
+```
+```javascript
+var example2 = new Vue({
+  el: '#example-2',
+  data: {
+    parentMessage: 'Parent',
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})
+```
+Result:
+```
+• Parent - 0 - Foor
+• Parent - 1 - Bar
+```
 
