@@ -428,7 +428,7 @@ Vue instances have their own event system, apart from DOM events, that allows fo
 Each Vue instance is an event emitter that can:
 
 ```
-• Listen to events using $on()
+• Listen to events using $on() (not the same as v-on in DOM!)
 
 • Trigger events on self using $emit()
 
@@ -436,6 +436,14 @@ Each Vue instance is an event emitter that can:
 
 • Broadcast an event that propagates downward to all descendants using $broadcast()
 ```
+see docs
+
+### using v-on for custom events
+
+`<child v-on:child-msg="handleIt"></child>`
+With this, the parent no longer has to have an `events` option, just a `handleIt` method that will take care of the `child-msg` event.
+
+
 
 
 
