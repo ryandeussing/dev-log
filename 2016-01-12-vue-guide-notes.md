@@ -421,6 +421,21 @@ each parent component has an array, `this.$children`, containing all it's child 
 
 BUT: use props to get data, not the `this.$parent` - otherwise you can create a mess with children changing parent state.
 
+## custom events
+
+Vue instances have their own event system, apart from DOM events, that allows for communication in a component tree.
+
+Each Vue instance is an event emitter that can:
+
+```
+• Listen to events using $on()
+
+• Trigger events on self using $emit()
+
+• Dispatch an event that propagates upward along the parent chain using $dispatch()
+
+• Broadcast an event that propagates downward to all descendants using $broadcast()
+```
 
 
 
