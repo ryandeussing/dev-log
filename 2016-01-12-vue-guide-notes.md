@@ -443,8 +443,23 @@ see docs
 `<child v-on:child-msg="handleIt"></child>`
 With this, the parent no longer has to have an `events` option, just a `handleIt` method that will take care of the `child-msg` event.
 
+## child component refs
 
+even with props and events, sometimes you may need to directly access a child component in javascript. to do this you need to assign a reference id to the child using `v-ref`:
 
+```
+<div id="parent">
+  <user-profile v-ref:profile></user-profile>
+</div>
+```
+
+```javascript
+var parent = new Vue({ el: '#parent' })
+// access child component instance
+var child = parent.$refs.profile
+```
+
+## content distribution with slots
 
 
 
