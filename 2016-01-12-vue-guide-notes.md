@@ -413,6 +413,14 @@ Available types:
 - Array
 ```
 
+## parent/child communicatin
+
+a child component has access to its parent as `this.$parent`, the root Vue instance is available to all children as `this.$root`
+
+each parent component has an array, `this.$children`, containing all it's child components
+
+BUT: use props to get data, not the `this.$parent` - otherwise you can create a mess with children changing parent state.
+
 
 
 
