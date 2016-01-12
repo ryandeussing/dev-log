@@ -461,9 +461,46 @@ var child = parent.$refs.profile
 
 ## content distribution with slots
 
+lets us do this:
 
+```
+<app>
+  <app-header></app-header>
+  <app-footer></app-footer>
+</app>
+```
 
+### single slot
 
+Parent content will be discarded unless the child component template contains at least one `<slot>` outlet.
+
+Anything originally inside the `<slot>` tags is considered fallback content. Fallback content is compiled in the child scope and will only be displayed if the hosting element is empty.
+
+Take this template for `my-component`: 
+```
+<div>
+  <h1>This is my component!</h1>
+  <slot>
+    This will only be displayed if there is no content
+    to be distributed.
+  </slot>
+</div>
+```
+Here's parent markup including `my-component` AND content:
+```
+<my-component>
+  <p>This is some original content</p>
+  <p>This is some more original content</p>
+</my-component>
+```
+Here's the result:
+```
+<div>
+  <h1>This is my component!</h1>
+  <p>This is some original content</p>
+  <p>This is some more original content</p>
+</div>
+```
 
 
 
