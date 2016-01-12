@@ -611,8 +611,39 @@ The API for a Vue.js component essentially comes in three parts - `props`, `even
 
 • `Slots` allow the external environment to insert content into the component’s view structure
 
+With the dedicated shorthand syntax for `v-bind` and `v-on`, the intents can be clearly and succinctly conveyed in the template:
 
+```
+<my-component
+  :foo="baz"
+  :bar="qux"
+  @event-a="doThis"
+  @event-b="doThat">
+  <!-- content -->
+  <img slot="icon" src="...">
+  <p slot="main-text">Hello!</p>
+</my-component>
+```
 
+## async components
+
+see docs, for large apps that get components from server as needed
+
+## fragment instance
+
+you should always have a single root-level element in templates, especially for components that you want to have transitions on.
+
+```
+<div>
+  I have a single root node!
+  <div>node 1</div>
+  <div>node 2</div>
+</div>
+```
+
+see docs
+
+## large scale apps
 
 
 
