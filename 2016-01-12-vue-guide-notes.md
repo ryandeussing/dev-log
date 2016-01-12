@@ -138,7 +138,7 @@ to render a block of multiple elements:
 
 ## track-by
 
-If you're replacing an array of objects (e.g. with an API call) you can try to re-use any elements by using `track-by`:
+If you're replacing an array of objects (e.g. with an API call) you can try to re-use elements, of possible,  by using `track-by`:
 
 ```javascript
 {
@@ -153,6 +153,29 @@ If you're replacing an array of objects (e.g. with an API call) you can try to r
   <!-- content -->
 </div>
 ```
+
+## adding to array
+
+you need to use `$set` when modifying a specific index position of an array:
+
+```javascript
+// same as `example1.items[0] = ...` but triggers view update
+example1.items.$set(0, { childMsg: 'Changed!'})
+```
+
+## removing from an array
+
+you can use `$remove`, which handles splicing for you:
+
+`this.items.$remove(item)`
+
+## displaying filtered/ordered results
+
+when you don't need to change the data, but just want to filter or order elements on the page, you can:
+
+- use a computed property that returns the filtered or sorted Array (more control)
+- use `filterBy` or `orderBy` helpers (more convenient)
+
 
 
 
