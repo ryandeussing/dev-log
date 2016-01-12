@@ -502,6 +502,40 @@ Here's the result:
 </div>
 ```
 
+### named slots
+
+you can have ONE unnamed slot (the default) and MANY named slots.
+
+use named slots to put included content in specific places:
+
+here's a `multi-insertion` component:
+```
+<div>
+  <slot name="one"></slot>
+  <slot></slot>
+  <slot name="two"></slot>
+</div>
+```
+Here's parent markup including `multi-insertion` AND content:
+```
+<multi-insertion>
+  <p slot="one">One</p>
+  <p slot="two">Two</p>
+  <p>Default A</p>
+</multi-insertion>
+```
+Result:
+```
+<div>
+  <p slot="one">One</p>
+  <p>Default A</p>
+  <p slot="two">Two</p>
+</div>
+```
+
+
+
+
 
 
 
