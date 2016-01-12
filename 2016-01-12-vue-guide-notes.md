@@ -96,12 +96,12 @@ Result:
 • Bar
 ```
 
-inside `v-for` we have access to properties in the parent scopr, plus `$index`:
+inside `v-for` we have access to properties in the parent scope, plus a variable for the index or key:
 
 ```
 <ul id="example-2">
-  <li v-for="item in items">
-    {{ parentMessage }} - {{ $index }} - {{ item.message }}
+  <li v-for="(index, item) in items">
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
   </li>
 </ul>
 ```
@@ -122,4 +122,51 @@ Result:
 • Parent - 0 - Foor
 • Parent - 1 - Bar
 ```
+
+## template v-for
+
+to render a block of multiple elements:
+
+```
+<ul>
+  <template v-for="item in items">
+    <li>{{ item.msg }}</li>
+    <li class="divider"></li>
+  </template>
+</ul>
+```
+
+## track-by
+
+If you're replacing an array of objects (e.g. with an API call) you can try to re-use any elements by using `track-by`:
+
+```javascript
+{
+  items: [
+    { _uid: '88f869d', ... },
+    { _uid: '7496c10', ... }
+  ]
+}
+```
+```
+<div v-for="item in items" track-by="_uid">
+  <!-- content -->
+</div>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
