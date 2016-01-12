@@ -176,6 +176,68 @@ when you don't need to change the data, but just want to filter or order element
 - use a computed property that returns the filtered or sorted Array (more control)
 - use `filterBy` or `orderBy` helpers (more convenient)
 
+## methods + event handling
+
+stop propagation: `<a v-on:click.stop="doThis"></a>`
+
+prevent default: `<form v-on:submit.prevent="onSubmit"></form>`
+
+chain modifiers: `<a v-on:click.stop.prevent="doThat">`
+
+## key modifiers for common keys
+
+submit on enter keyup: `<input @keyup.enter="submit">`
+```
+enter
+tab
+delete
+esc
+space
+up
+down
+left
+right
+```
+
+## form input bindings
+
+`v-model` is syntax sugar for forms, creates 2-way binding for for elements, and auto-selects the right way to store data based on the form element (boolean, array, string, etc.)
+
+you can use `v-bind` to bind values to dynamic properties: (here, `a` and `b` are keys on the `vm.data` object)
+
+```
+<input
+  type="checkbox"
+  v-model="toggle"
+  v-bind:true-value="a"
+  v-bind:false-value="b">
+```
+
+Here, `vm.pick` will not be `a`, but will be the value of `vm.a`:
+`<input type="radio" v-model="pick" v-bind:value="a">`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
