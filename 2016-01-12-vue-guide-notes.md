@@ -217,8 +217,27 @@ Here, `vm.pick` will not be `a`, but will be the value of `vm.a`:
 `<input type="radio" v-model="pick" v-bind:value="a">`
 
 
+### lazy
 
+```
+<!-- synced after "change" instead of "input" -->
+<input v-model="msg" lazy>
+```
 
+### number
+
+```
+<!-- automatically persist input as numbers -->
+<input v-model="age" number>
+```
+
+### debounce
+
+```
+<!-- set a min delay after each keystroke before update is performed -->
+<input v-model="msg" debounce="500">
+<!-- note: use vm.$watch() to react to data changes when using debounce -->
+```
 
 
 
