@@ -645,6 +645,28 @@ see docs
 
 ## large scale apps
 
+use `vue-cli`
+
+use `vue-router`
+
+use `vue-resource`
+
+If you have a piece of state that should be shared by multiple instances, you should avoid duplicating it and share it by identity:
+
+```javascript
+var sourceOfTruth = {}
+
+var vmA = new Vue({
+  data: sourceOfTruth
+})
+
+var vmB = new Vue({
+  data: sourceOfTruth
+})
+```
+
+Now whenever sourceOfTruth is mutated, both `vmA` and `vmB` will update their views automatically.
+
 
 
 
